@@ -9,6 +9,11 @@ const MoviesCard = ({ movie, loading }) => {
     return null; // Don't render if movie data is invalid
   }
 
+  const finalImagePath = `${BASE_IMAGE_URL}${movie.image
+    ?.replace(/\\/g, "/")
+    .replace(/^\/+/, "")}`;
+  console.log("Image Path:", finalImagePath);
+  
   const handleImageError = () => {
     setImageError(true);
   };

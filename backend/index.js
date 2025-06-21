@@ -16,6 +16,7 @@ const port = process.env.PORT || 8000;
 app.use(
   cors({
     origin: "https://movies-hub-psi.vercel.app",
+    // origin: "http://localhost:5173",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   })
