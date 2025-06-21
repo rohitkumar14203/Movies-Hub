@@ -9,7 +9,7 @@ import {
   useGetRandomMoviesQuery,
 } from "../../redux/api/moviesApiSlice";
 
-import MovieCard from "./MovieCard";
+import MoviesCard from "./MoviesCard";
 
 import {
   setMoviesFilter,

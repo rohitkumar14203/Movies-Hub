@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const MovieCard = ({ movie, loading }) => {
+const MoviesCard = ({ movie, loading }) => {
   const BASE_IMAGE_URL = import.meta.env.VITE_BASE_IMAGE_URL;
   const [imageError, setImageError] = useState(false);
-  
+
   if (!movie || !movie._id) {
     return null; // Don't render if movie data is invalid
   }
@@ -22,7 +22,9 @@ const MovieCard = ({ movie, loading }) => {
           </div>
         ) : (
           <img
-            src={`${BASE_IMAGE_URL}${movie.image ? movie.image.replace(/\\/g, "/") : ""}`}
+            src={`${BASE_IMAGE_URL}${
+              movie.image ? movie.image.replace(/\\/g, "/") : ""
+            }`}
             alt={movie.name}
             onError={handleImageError}
             className="w-[150px] h-[150px] sm:w-[180px] sm:h-[180px] md:w-[200px] md:h-[200px] lg:w-[20rem] lg:h-[20rem] rounded object-cover transition duration-300 ease-in-out transform group-hover:opacity-50"
@@ -37,4 +39,4 @@ const MovieCard = ({ movie, loading }) => {
   );
 };
 
-export default MovieCard;
+export default MoviesCard;
