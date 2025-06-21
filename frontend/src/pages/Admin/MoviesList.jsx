@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useGetAllMoviesQuery } from "../../redux/api/moviesApiSlice";
 
-const MovieList = () => {
+const MoviesList = () => {
   const { data: movies } = useGetAllMoviesQuery();
   const BASE_IMAGE_URL = import.meta.env.VITE_BASE_IMAGE_URL;
 
@@ -46,4 +46,4 @@ const MovieList = () => {
   );
 };
 
-export default MovieList;
+export default MoviesList;
