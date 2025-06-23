@@ -170,7 +170,7 @@ const AllMovies = () => {
         <section className="mt-[10rem] w-full px-4 flex justify-center items-center flex-wrap gap-6">
           {filteredMovies.length > 0 ? (
             filteredMovies.map((movie) => (
-              <MovieCard key={movie._id} movie={movie} />
+              <MoviesCard key={movie._id} movie={movie} />
             ))
           ) : (
             <p className="text-white text-2xl text-center w-full">
