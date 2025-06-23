@@ -38,9 +38,12 @@ router.post("/", (req, res) => {
     if (err) {
       res.status(400).send({ message: err.message });
     } else if (req.file) {
+      // Remove 'backend/' prefix and normalize to forward slashes for URL
+      let imagePath = req.file.path.replace(/^backend[\\/]/, "");
+      imagePath = imagePath.replace(/\\/g, "/");
       res.status(200).send({
         message: "Image uploaded successfully",
-        image: `${req.file.path}`,
+        image: `/${imagePath}`,
       });
     } else {
       res.status(400).send({ message: "No image file provided" });

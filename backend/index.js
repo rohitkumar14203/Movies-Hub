@@ -38,7 +38,8 @@ app.use("/api/v1/upload", uploadRoutes);
 
 const _dirname = path.resolve();
 console.log(_dirname);
-app.use("/upload", express.static(path.join(_dirname + "/upload")));
+
+app.use("/upload", express.static(path.join(_dirname, "backend", "upload")));
 
 app.listen(port, () => {
   console.log(`server is up baby...`);
